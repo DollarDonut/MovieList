@@ -3,6 +3,11 @@ body{
     font-family: noto sans, sans-serif;
 }
 
+table{
+    display: flex;
+    justify-content: center;
+}
+
 tr{
     color: #a7e7fa;
 }
@@ -10,3 +15,12 @@ tr{
 .TGR{
     color: #f0bcff;
 }
+
+.IMG{
+    width: 7rem !important;
+}
+
+.movieImage{
+    width: 3rem;
+}
+

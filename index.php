@@ -11,6 +11,7 @@ $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <title>Movie List</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
 </head>
 <body>
     <h1>Movies in Database</h1>
@@ -27,6 +28,16 @@ $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td class="TGR"><?= $movie['MovieTitle'] ?></td>
             <td class="TGR"><?= $movie['Genre'] ?></td>
             <td class="TGR"><?= $movie['releaseDate'] ?></td>
+            <td class="TGR">
+                <?php if (!empty($movie['MovieImage'])): ?>
+                    <img class="MovieImg" src="<?= htmlspecialchars($movie['MovieImage']) ?>" 
+                        alt="<?= htmlspecialchars($movie['MovieTitle']) ?>" 
+                        style="max-width:400px;">
+                <?php else: ?>
+                    No Image
+                <?php endif; ?>
+            </td>
+
         </tr>
         <?php endforeach; ?>
     </table>
